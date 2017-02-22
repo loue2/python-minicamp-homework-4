@@ -1,0 +1,32 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/static/styles/styles.css">
+</head>
+<body>
+  <h1>Welcome to the Movie Database</h1>
+  <form action = "{{ url_for('new_movie') }}" method = "POST">
+    <h3> Would you like to add a movie to the collection?</h3>
+    Movie Name:<br>
+    <input type = "text" name = "movie_name" /></br>
+    Year:<br>
+    <input type = "text" name = "year" ></textarea><br>
+    Rating<br>
+    <select name="rating">
+      <option value="G">G</option>
+      <option value="PG">PG</option>
+      <option value="PG-13">PG-13</option>
+      <option value="R">R</option>
+    </select>
+    <br>
+    Genre<br>
+    <input type = "text" name = "genre" /><br>
+    <input class="button" type = "submit" value = "Add movie" /><br>
+  </form>
+  <h3><a href="/movies">View all movies in datatbase</a></h3>
+  <form action="{{ url_for('search') }}" method="GET">
+    <h3>Search movies by name:</h3>
+    <input type="text" name="name" />
+    <input class="button" type="submit" />
+  </form>
+</body>
+</html>
